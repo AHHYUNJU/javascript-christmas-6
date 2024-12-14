@@ -22,11 +22,21 @@ export async function askMenu() {
         const [name, quantity] = order.split("-");
         return { name, quantity: Number(quantity) };
       });
-      Console.print(orders)
       validateMenu(orders);
       return orders; 
     } catch (error) {
       Console.print(error.message); 
     }
+  }
+}
+
+
+
+export async function showEvent(orders){
+  try{
+    Console.print(MESSAGE.SHOW_EVENT);
+    showEvent(orders);
+  } catch (error) {
+    Console.print(error.message); 
   }
 }
